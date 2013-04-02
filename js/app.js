@@ -5,7 +5,7 @@ fossnp.config(function($routeProvider) {
 });
 
 function mainCtrl($scope, $rootScope, $http, $route, $location, $routeParams){
-	$http.jsonp('https://api.github.com/orgs/foss-np/repos?callback=JSON_CALLBACK').success(function(data){
+	$http.jsonp('https://api.github.com/orgs/openosk/repos?callback=JSON_CALLBACK').success(function(data){
 		$rootScope.repos = data.data;
 	});
 	$scope.$route = $route;
