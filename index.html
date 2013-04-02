@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="nosk">
+  <head>
+    <title>NOSK in GitHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- main stylesheet file-->
+    <link href="css/main.css" rel="stylesheet" media="screen">
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id=container>
+    	<header>
+    		<h2>Nepal Open Source Klub - GitHub</h2>
+    	</header>
+    	<div class=clear></div>
+    	<section>
+    		<form class=form-search>
+    			I would love to search: <input type=text class="input-medium search-query" />
+    			<button type=submit class=btn>Search</button>
+    		</form>
+
+    		
+    		<article>
+
+				<ul ng-controller="mainCtrl">
+                    <li ng-repeat='repo in repos' >      
+                    <h3><a target=_blank href="http://github.com/{{repo.owner.login}}/{{repo.name}}/">{{repo.name}}</a></h3>   
+                    <i class=icon-eye-open></i>{{repo.watchers}}
+                            <i class=icon-random style="transform:rotate(90deg);-ms-transform:rotate(90deg); /* E 9 */-moz-transform:rotate(90deg); /* Firefox */-webkit-transform:rotate(90deg); /* Safari and Chrome */-o-transform:rotate(90deg); /* Opera */"></i>{{repo.forks}}
+                            <img src="img/twitter.png" style="width: 26px;height: 18px;">               
+                        <a target=_blank href="http://github.com/{{repo.owner.login}}/{{repo.name}}/">
+                             {{repo.name}} - {{repo.description}} 
+                        </a>
+                    </li>
+                    <div ng-view></div>
+
+
+                    <!--
+					<li class=repos>
+						<div class=intro>
+							<h3><a href=#>nosk-github</a></h3>
+							<i class=icon-eye-open></i>
+							<i class=icon-random style="transform:rotate(90deg);-ms-transform:rotate(90deg); /* E 9 */-moz-transform:rotate(90deg); /* Firefox */-webkit-transform:rotate(90deg); /* Safari and Chrome */-o-transform:rotate(90deg); /* Opera */"></i>
+							<img src="img/twitter.png" style="width: 26px;height: 18px;">
+						</div>
+						<div class=vsep></div>
+						<div class=desc>
+							This is a sample repository. For testing the project.
+						</desc>
+
+					</li><br />
+
+                    <li class=repos>
+                        <div class=intro>
+                            <h3><a href=#>nosk.org.np</a></h3>
+                            <i class=icon-eye-open></i>
+                            <i class=icon-random style="transform:rotate(90deg);-ms-transform:rotate(90deg); /* E 9 */-moz-transform:rotate(90deg); /* Firefox */-webkit-transform:rotate(90deg); /* Safari and Chrome */-o-transform:rotate(90deg); /* Opera */"></i>
+                            <img src="img/twitter.png" style="width: 26px;height: 18px;">
+                        </div>
+                        <div class=vsep></div>
+                        <div class=desc>
+                            This is a sample repository for nosk.org.np
+                        </desc>
+
+                    </li>-->
+				</ul>
+
+    		</article>
+
+    	</section>
+
+    	<section>
+    		<form class=form-inline>
+    			<legend>Submit your project</legend>
+    			<input type=text class="input-medium" placeholder="github username" />
+    			<input type=text class="input-medium" placeholder="github repo" />
+    			<button type=submit class=btn>Submit</button>
+    		</form>
+    	</section>
+
+    	<footer>
+    			CopyLeft (ↄ) 2013- Nepal Open Source Klub | <a href="http://nosk.org.np/">Source on Github</a>
+    	</footer>
+
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/underscore-min.js">
+    <script src="js/base64.js">
+    <script src="js/github.js">
+    <script type="text/javascript">
+        $(document).ready(function(){
+                var github = new Github({
+                username: "opnchaudhary",
+                password: "opensourcehacker1",
+                auth: "basic"
+        });
+        var repo=github.getRepo('opnchaudhary','localhost');  
+        repo.show(function(err, repo) {alert(repo)});
+    </script>
+  </body>
+</html>

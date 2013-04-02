@@ -1,0 +1,29 @@
+#container{
+	text-align: center;
+	margin:auto;
+	max-width: 960px;
+	clear:both;
+}
+header{
+	float:left;
+}
+ul li {
+	list-style: none;
+}
+.clear{
+	clear:both;
+}
+.repos{
+
+}
+.vsep{
+	
+}
+.intro{
+	width:260px;
+	
+}
+.desc{
+	width:600px;
+	
+}
