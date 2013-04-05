@@ -1,6 +1,6 @@
-var fossnp = angular.module('nosk',[]);
+var nosk = angular.module('nosk',[]);
 
-fossnp.config(function($routeProvider) {
+nosk.config(function($routeProvider) {
 	$routeProvider.when('/repo/:repo/:owner',{templateUrl:'contributor.html',controller:repoCtrl})
 });
 
